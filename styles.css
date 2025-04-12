@@ -19,6 +19,23 @@ span {
     margin-bottom: 40px;
 }
 
+input {
+    display: block;
+    width: 200px;
+    margin-bottom: 20px;
+    background-color: #10B981;
+    border: none;  
+    font-family: "Karla", sans-serif;
+    color: white;  
+    text-align: center;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+::placeholder {
+    color: white;
+}
+
 button {
     background-color: #10B981;
     color: white;

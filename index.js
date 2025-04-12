@@ -4,11 +4,12 @@ const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O"
 
 let firstPasswordEl = document.getElementById("firstPassword-el")
 let secondPasswordEl = document.getElementById("secondPassword-el")
+let passwordLenghtEL = document.getElementById("passwordLength-el")
 let passwordGenerated = false
 
 function generatePasswords() {
     if (passwordGenerated === false) {
-        for (let i = 0; i < 15; i++) {
+        for (let i = 0; i < passwordLenghtEL.value; i++) {
             firstPasswordEl.textContent += characters[generateRandomIndex()]
             secondPasswordEl.textContent += characters[generateRandomIndex()]
         }
