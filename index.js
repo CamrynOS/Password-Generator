@@ -4,12 +4,16 @@ const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O"
 
 let firstPasswordEl = document.getElementById("firstPassword-el")
 let secondPasswordEl = document.getElementById("secondPassword-el")
-let passwordLenghtEL = document.getElementById("passwordLength-el")
+let passwordLengthEL = document.getElementById("passwordLength-el")
 let passwordGenerated = false
+let passwordEl = document.querySelector(".password")
 
 function generatePasswords() {
     if (passwordGenerated === false) {
-        for (let i = 0; i < passwordLenghtEL.value; i++) {
+        if (passwordLengthEL.value < 1) {
+            alert("Please make sure to enter a length")
+        }
+        for (let i = 0; i < passwordLengthEL.value; i++) {
             firstPasswordEl.textContent += characters[generateRandomIndex()]
             secondPasswordEl.textContent += characters[generateRandomIndex()]
         }
@@ -25,3 +29,8 @@ function generatePasswords() {
 function generateRandomIndex() {
     return Math.floor(Math.random() * characters.length)
 }
+
+passwordEl.addEventListener("click", function() {
+    navigator.clipboard.writeText(passwordEl.textContent)
+    alert("Copied password to clipboard")
+})
